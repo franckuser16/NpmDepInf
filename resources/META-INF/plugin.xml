@@ -1,0 +1,49 @@
+<idea-plugin version="2">
+  <id>npmdepinf</id>
+  <name>npmdepinf</name>
+  <version>1.0</version>
+  <vendor email="franckuser16@gmail.com" url="">franckmich</vendor>
+
+  <description><![CDATA[
+	<p>Buil @VERSION-@BUILD-NUMBER@</p>
+	<p>Simple plug-in showing inline informations next to dependencies declaration in package.json</p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+    <component>
+      <implementation-class>org.fmich.NpmDepInfPlugin</implementation-class>
+    </component>
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="ToggleNpmDepInf" class="org.fmich.action.NpmDepInfToggleAction" text="Toggle NpmDepInf"
+            description="Toggle npm dependencies infos plugin">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="BACK_SLASH" second-keystroke="T"/>
+    </action>
+  </actions>
+
+</idea-plugin>
